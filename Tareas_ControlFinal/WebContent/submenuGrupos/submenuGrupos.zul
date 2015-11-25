@@ -1,0 +1,54 @@
+<?page title="Nuevo Grupo" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Registros de Nuevo Usuarios" border="normal" id="winNuevoUsuario" closable="true" apply="">
+<grid>
+			<columns>
+				<column label="Etiqueta" />
+				<column label="Dato" />
+			</columns>
+			<rows>
+				
+				<row>
+					<label value="Nombre del Grupo:" />
+					<textbox id="textbox_nombre_grupo" constraint="no empty">
+					</textbox>
+
+				</row>
+				
+				<row>
+				<listbox id="listaGrupoPersonas" mold="paging" pageSize="6"
+		multiple="false" width="100%"
+		emptyMessage="No items found in the result">
+		
+		<auxhead sclass="category-center" >
+			<auxheader label="Listado de Personas" style="color:blue; font-size:14px" colspan="3"
+				rowspan="1" />
+		</auxhead>
+		<listhead sizable="true" menupopup="auto">
+			<listheader label="Nombre" sort="auto(finicial)" id="nombre"/>
+			<listheader label="Departamento" sort="auto(ffinal)" id="departamento"/>
+			<listheader label="Cedula" sort="auto(ctpedidos)" sortDirection="descending" id="cedula"/>
+							
+		</listhead>
+		<template name="model">
+			<listitem>
+				<listcell label="${each.nombre}" />
+				<listcell label="${each.departamento}" />
+				<listcell label="${each.cedula}" />
+				
+				</listitem>
+		</template>
+	</listbox>
+	<button image="" id="buttonbuscar" label="Buscar Empleado">
+		</button>
+				</row>
+				
+				<row>
+					<button label="Registrar" id="button_Registrar" />
+					<button label="Cancelar" id="button_Cancelar"  onClick="winNuevoUsuario.detach()"/>
+				</row>
+
+			</rows>
+		</grid>
+</window>
+</zk>

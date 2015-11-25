@@ -1,0 +1,117 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="new page title" border="normal" closable="true">
+<groupbox id="gpb_1">
+		<caption label="Permisos"></caption>
+		<space/>
+		<label value="Tipo de Roles:"></label>
+		<space/>
+		<combobox id="cmb_tipo"></combobox>
+		<space/>
+		  <vlayout>
+		 
+         <separator />
+        <hlayout>
+            <label id="layout" />
+        </hlayout>
+        <zscript><![CDATA[
+            void doChecked() {
+                layout.value = (l1.isChecked() ? l1.label+' ' : "") 
+                    + (l2.isChecked() ? l2.label+' ' : "")
+                    + (l3.isChecked() ? l3.label+' ' : "")
+                    + (l4.isChecked() ? l4.label+' ' : "")
+                    + (l5.isChecked() ? l5.label+' ' : "")
+                    + (l6.isChecked() ? l6.label+' ' : "")
+                    + (l7.isChecked() ? l7.label+' ' : "")
+                    + (l8.isChecked() ? l8.label+' ' : "")
+                    + (l9.isChecked() ? l9.label+' ' : "")
+                    + (l10.isChecked() ? l10.label+' ' : "")
+                    + (l11.isChecked() ? l11.label+' ' : "")
+                    + (l12.isChecked() ? l12.label+' ' : "")
+                    + (l13.isChecked() ? l13.label+' ' : "")
+                    + (l14.isChecked() ? l14.label+' ' : "")
+                    + (l15.isChecked() ? l15.label+' ' : "")
+                    + (l16.isChecked() ? l16.label+' ' : "")
+                    + (l17.isChecked() ? l17.label+' ' : "")
+                    + (l18.isChecked() ? l18.label+' ' : "")
+                    + (l19.isChecked() ? l19.label+' ' : "")
+                    + (l20.isChecked() ? l20.label+' ' : "")
+                    
+                    ;
+            }
+        ]]></zscript>
+        <grid >
+     <columns>
+			<column label="Descripcion"/>
+			<column label="Nuevo"/>
+			<column label="Editar"/>
+			<column label="Eliminar"/>
+			<column label="Buscar"/>
+		</columns>
+		<rows>
+		
+			<row>
+			<label value="Usuario" />
+			 <checkbox id="l1" label="Border" onCheck="doChecked()" />
+       
+				<checkbox id="l2" label="Box" onCheck="doChecked()" />
+        	<checkbox id="l3" label="Table" onCheck="doChecked()" />
+        	<checkbox id="l4" label="Portal" onCheck="doChecked()" />
+       		 
+			</row>
+			
+			<row>
+			<label value="Usuario" />
+			 <checkbox id="l5" label="Border" onCheck="doChecked()" />
+       
+				<checkbox id="l6" label="Box" onCheck="doChecked()" />
+        	<checkbox id="l7" label="Table" onCheck="doChecked()" />
+        	<checkbox id="l8" label="Portal" onCheck="doChecked()" />
+       
+        	</row>
+        	
+        	<row>
+        	<label value="Usuario" />
+				  <checkbox id="l9" label="Border" onCheck="doChecked()" />
+       
+				<checkbox id="l10" label="Box" onCheck="doChecked()" />
+        	<checkbox id="l11" label="Table" onCheck="doChecked()" />
+        	<checkbox id="l12" label="Portal" onCheck="doChecked()" />
+       
+       
+        	</row>
+        	<row>
+        	<label value="Usuario" />
+				 <checkbox id="l13" label="Border" onCheck="doChecked()" />
+       
+				<checkbox id="l14" label="Box" onCheck="doChecked()" />
+        	<checkbox id="l15" label="Table" onCheck="doChecked()" />
+        	<checkbox id="l16" label="Portal" onCheck="doChecked()" />
+        
+        	</row>
+        	
+        	<row>
+        	<label value="Usuario" />
+				 <checkbox id="l17" label="Border" onCheck="doChecked()" />
+       
+				<checkbox id="l18" label="Box" onCheck="doChecked()" />
+        	<checkbox id="l19" label="Table" onCheck="doChecked()" />
+        	<checkbox id="l20" label="Portal" onCheck="doChecked()" />
+        
+        	</row>
+        	
+			<row>
+				<button label="Registrar" id="button_registar" />
+				<label value="...." id="Label_mensaje" style="color:red"/>
+			</row>
+		</rows>		
+     
+     </grid>   
+    </vlayout>
+    
+	</groupbox>
+	
+	
+	
+		</window>
+</zk>
