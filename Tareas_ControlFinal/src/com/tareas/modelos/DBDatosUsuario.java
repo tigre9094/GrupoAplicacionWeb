@@ -32,10 +32,7 @@ public class DBDatosUsuario {
 		ResultSet resultados= null;
 		String passwordenc=pass;
 				//EncriptarPassword(pass);
-		String query="select * from datosusuario as du, personas as per, usuario as usu, tipousuario as tip"
-		+ " where du.id_usuario=usu.id_usuario and usu.id_persona=per.id_persona and usu.id_tipousuario=tip.id_tipousuario and "
-		+ " du.alias ='" + user + "' and"
-		+ " du.dpassword = '" + passwordenc + "'";		
+		String query="select * from datosusuarios as du, personas as per, usuarios as usu, tiposusuarios as tip where du.id_usuario=usu.id_usuario and usu.id_persona=per.id_persona and usu.id_tipousuario=tip.id_tipousuario and du.usuario ='" + user + "' and du.contraseña = '" + passwordenc + "'";;		
 		System.out.println(query);		
 		try {
 			sentencia= con.createStatement();
@@ -61,8 +58,8 @@ public class DBDatosUsuario {
 				usuario.setTipousuario(tipousuario);
 				
 				usuario.setPersona(persona);
-				datosusuario.setAlias(resultados.getString("alias"));
-				datosusuario.setClave(resultados.getString("dpassword"));
+				datosusuario.setAlias(resultados.getString("usuario"));
+				datosusuario.setClave(resultados.getString("contraseña"));
 				datosusuario.setUsuario(usuario);		
 			}
 		} catch (SQLException e) {
